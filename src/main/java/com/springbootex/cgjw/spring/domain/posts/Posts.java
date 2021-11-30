@@ -1,5 +1,6 @@
 package com.springbootex.cgjw.spring.domain.posts;
 
+import com.springbootex.cgjw.spring.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 /*테이블과 링크될 클래스임을 나타냄 ex) SalesManager.java -> sales_manager table*/
 @Entity //JPA 어노테이션
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK의 생성 규칙, 스프링 부트 2.0에서는 GenerationType.IDENTITY 옵션을 추가해야 auto_increment
     private Long id;
