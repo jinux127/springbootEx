@@ -7,6 +7,8 @@ buildscript {
     repositories {
         /*이전부터 많이 사용하는 저장소, 본인이 만든 라이브러리를 업로드하기는 힘듦*/
         mavenCentral()
+        /** spring 2.x 버전과 1.x 버전의 호완성을 위해 **/
+        maven { url 'https://repo.spring.io/snapshot' }
         /*라이브러리 업로드 간단, jcenter에 라이브러리 업로드시 mavenCentral에도 업로드 자동화 가능*/
         jcenter()
     }
@@ -40,6 +42,15 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 //    인메모리 관계형 데이터베이스, JPA의 테스트로서 사용할 예정
     implementation('com.h2database:h2')
+//    스프링 시큐리티 의존성
+//    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation('org.springframework.session:spring-session-jdbc')
+
+
+    /** @EnableOAuth2Client 등을 사용하기 위함 **/
+    implementation ('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.1.RELEASE')
+    implementation ('org.springframework.security:spring-security-oauth2-client')
+    implementation ('org.springframework.security:spring-security-oauth2-jose')
 }
 
 test {
