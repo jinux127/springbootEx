@@ -35,10 +35,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('junit:junit:4.13.1')
     implementation('org.projectlombok:lombok')
-    testImplementation('org.assertj:assertj-core')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-//    스프링 시큐리티 테스트를 위해 여러 도구 지원
-    testImplementation('org.springframework.security:spring-security-test')
 //    JPA
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 //    인메모리 관계형 데이터베이스, JPA의 테스트로서 사용할 예정
@@ -51,6 +47,13 @@ dependencies {
     implementation ('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.1.RELEASE')
     implementation ('org.springframework.security:spring-security-oauth2-client')
     implementation ('org.springframework.security:spring-security-oauth2-jose')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+    testImplementation('org.assertj:assertj-core')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+//    스프링 시큐리티 테스트를 위해 여러 도구 지원
+    testImplementation('org.springframework.security:spring-security-test')
 }
 
 test {
